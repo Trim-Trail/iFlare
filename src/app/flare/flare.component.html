@@ -1,0 +1,14 @@
+<div class="flare">
+  <div class="flare-header">
+    <div class="delivery">
+      <img src="../../assets/images/home-delivery.png" class="img-fluid">
+    </div>
+  </div>
+  <div class="flare-content">
+    <div class="product effect u-bg-light" *ngFor="let item of (items$ | async)">
+      <app-product [item]="item"></app-product>
+    </div>
+  </div>
+  <div class="flare-footer">
+  </div>
+</div>

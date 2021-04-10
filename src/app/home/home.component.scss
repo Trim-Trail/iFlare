@@ -1,0 +1,14 @@
+.home {
+  .card {
+    border-width: 1px;
+    border-style: solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .rtrade{
+      font-size: 1.3rem;
+      vertical-align: super;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+<div class="item-box">
+  <div class="picture">
+    <img [src]="item.picture" class="img-fluid" placeholder="../../../assets/images/placeholder.png" />
+  </div>
+  <div class="title">
+    <h2 class="text-uppercase text-center">{{item.name}}</h2>
+  </div>
+  <div class="desc">
+    <img src="../../../assets/images/offer-bg.png" class="img-fluid" />
+    <div class="price-offer" *ngIf="item.categoryId==='1'">
+      <div class="mrp u-fg-dark">
+        MRP
+      </div>
+      <div class="mrp-rs u-fg-dark">
+        ₹
+      </div>
+      <div class="mrp-value u-fg-dark">
+        {{item.actualPrice}}
+      </div>
+      <div class="brp u-fg-light">
+        Our<br>Price
+      </div>
+      <div class="brp-rs u-fg-light">
+        ₹
+      </div>
+      <div class="brp-value u-fg-light">
+        {{item.price}}
+      </div>
+    </div>
+    <div class="cart-offer" *ngIf="item.categoryId==='2'">
+      <div class="buy u-fg-dark">
+        Buy
+      </div>
+      <div class="buy-value u-fg-dark">
+        {{item.buyItem}}
+      </div>
+      <div class="get u-fg-light">
+        Get
+      </div>
+      <div class="get-value u-fg-light">
+        {{item.getItem}}
+      </div>
+      <div class="get-free u-fg-light">
+        free
+      </div>
+    </div>
+    <div class="combo-offer" *ngIf="item.categoryId==='3'">
+      <div class="main u-fg-dark">
+        {{item.mainItem}}
+      </div>
+      <div class="sub u-fg-light">
+        {{item.subItem}}
+      </div>
+    </div>
+    <div class="save u-bg-secondary u-fg-light" *ngIf="!!item.save">
+      <span>Save</span>
+      <span>₹ {{item.save}}</span>
+    </div>
+  </div>
+
+  <!-- <div class="offer-buy u-fg-dark">
+    Buy
+  </div>
+  <div class="offer-buy-value u-fg-dark">
+    1
+  </div> -->
+
+</div>

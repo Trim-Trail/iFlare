@@ -1,0 +1,212 @@
+$buy-rotation: -9deg;
+$zindex: 10;
+.item-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  .picture {
+    padding-top: 60px;
+    width: 280px;
+  }
+
+  .title {
+    position: absolute;
+    top: 20px;
+    left: 200px;
+    h2 {
+      font-weight: 400;
+      font-size: 2.2rem;
+      text-shadow: 2px 2px 0px rgb(228, 225, 225);
+      line-height: 2.5rem;
+    }
+  }
+
+  .desc {
+    position: absolute;
+    top: 160px; // group top
+    left: 280px; // group left
+    width: 250px;
+    height: 260px;
+    z-index: $zindex;
+    img {
+      z-index: $zindex+1;
+    }
+    div.cart-offer {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: $zindex+2;
+      width: 100%;
+      height: 100%;
+
+      .buy,
+      .buy-value {
+        font-size: 2rem;
+        position: absolute;
+        font-weight: 500;
+        top: 68px;
+        left: 70px;
+        text-shadow: 2px 2px 0px rgb(255, 255, 255);
+        transform: rotate($buy-rotation);
+        -webkit-transform: rotate($buy-rotation);
+        -moz-transform: rotate($buy-rotation);
+        -ms-transform: rotate($buy-rotation);
+        -o-transform: rotate($buy-rotation);
+      }
+      .buy-value {
+        font-family: "Slackey", cursive;
+        font-size: 3rem !important;
+        margin-left: 4rem;
+        top: 50px;
+      }
+
+      .get,
+      .get-value,
+      .get-free {
+        font-size: 2rem;
+        position: absolute;
+        font-weight: 500;
+        top: 130px;
+        left: 50px;
+        text-shadow: 2px 2px 0px rgb(1, 1, 1);
+        transform: rotate($buy-rotation);
+        -webkit-transform: rotate($buy-rotation);
+        -moz-transform: rotate($buy-rotation);
+        -ms-transform: rotate($buy-rotation);
+        -o-transform: rotate($buy-rotation);
+      }
+      .get-value {
+        font-family: "Slackey", cursive;
+        font-size: 3rem !important;
+        margin-left: 4rem;
+        top: 110px;
+      }
+      .get-free {
+        font-family: "Slackey", cursive;
+        font-size: 1rem !important;
+        right: 60px;
+        text-align: right;
+        top: 140px !important;
+      }
+    }
+
+    div.price-offer {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: $zindex+2;
+      width: 100%;
+      height: 100%;
+
+      .mrp,
+      .mrp-value,
+      .mrp-rs {
+        font-size: 1.3rem;
+        position: absolute;
+        font-weight: 500;
+        top: 80px;
+        left: 45px;
+        text-shadow: 2px 2px 0px rgb(255, 255, 255);
+        transform: rotate($buy-rotation);
+        -webkit-transform: rotate($buy-rotation);
+        -moz-transform: rotate($buy-rotation);
+        -ms-transform: rotate($buy-rotation);
+        -o-transform: rotate($buy-rotation);
+      }
+      .mrp-rs {
+        font-family: "Slackey", cursive;
+        font-size: 1.5rem !important;
+        margin-left: 3.5rem;
+        top: 78px;
+      }
+      .mrp-value {
+        font-family: "Slackey", cursive;
+        font-size: 1.9rem !important;
+        margin-left: 4.5rem;
+        top: 65px;
+      }
+
+      .brp,
+      .brp-value,
+      .brp-rs {
+        font-size: 1.3rem;
+        position: absolute;
+        font-weight: 500;
+        top: 132px;
+        left: 33px;
+        text-shadow: 2px 2px 0px rgb(0, 0, 0);
+        transform: rotate($buy-rotation);
+        -webkit-transform: rotate($buy-rotation);
+        -moz-transform: rotate($buy-rotation);
+        -ms-transform: rotate($buy-rotation);
+        -o-transform: rotate($buy-rotation);
+        line-height: 1.5rem;
+      }
+      .brp-rs {
+        font-family: "Slackey", cursive;
+        font-size: 1.5rem !important;
+        margin-left: 3.2rem;
+        top: 139px;
+      }
+      .brp-value {
+        font-family: "Slackey", cursive;
+        font-size: 1.9rem !important;
+        margin-left: 4.3rem;
+        top: 130px;
+      }
+    }
+
+    div.combo-offer {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: $zindex+2;
+      width: 100%;
+      height: 100%;
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 1em;
+      text-shadow: 2px 2px 0px rgb(0, 0, 0);
+      transform: rotate($buy-rotation);
+      -webkit-transform: rotate($buy-rotation);
+      -moz-transform: rotate($buy-rotation);
+      -ms-transform: rotate($buy-rotation);
+      -o-transform: rotate($buy-rotation);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .main {
+        position: absolute;
+        top: 75px;
+        left: 50px;
+        text-shadow: 2px 2px 0px rgb(255, 255, 255);
+      }
+      .sub {
+        position: absolute;
+        top: 128px;
+      }
+    }
+    .save {
+      position: absolute;
+      font-size: 1rem;
+      font-weight: 500;
+      text-shadow: 2px 2px 0px rgb(0, 0, 0);
+      top: 160px;
+      left: 130px;
+      box-sizing: border-box;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      z-index: $zindex+3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+}

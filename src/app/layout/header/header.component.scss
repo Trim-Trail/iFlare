@@ -1,0 +1,27 @@
+@import '../../../assets/scss/variables';
+
+.logo {
+  height: 40px;
+}
+
+.dropdown-menu-right {
+  right: 0;
+  left: auto;
+}
+
+.user {
+  .fa-user-circle {
+    font-size: 1.5rem;
+  }
+}
+
+a.nav-link:hover{
+  color: map-get($site-colors, primary) !important;
+}
+
+a.active:link,
+a.active:visited,
+a.active:hover,
+a.active:active{
+  color: map-get($site-colors, primary) !important;
+}

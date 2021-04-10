@@ -1,0 +1,91 @@
+<h4 class="u-fg-grey5">{{dialogTitle}}</h4>
+<hr class="u-mt-0">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-4 order-md-1">
+      <div *ngIf="image" class="remove-image u-mb-1">
+        <a class="u-cursor-pointer u-lnk-error u-hvr-grey5" (click)="onRemoveImage()"><span>
+            <mat-icon>delete</mat-icon>
+          </span>Remove Image</a>
+      </div>
+      <mat-card (click)="onChangeImage()" class="item-image u-cursor-pointer">
+        <img [src]="image" placeholder="assets/images/placeholder.png"/>
+        <div class="u-circle u-circle-0 position-absolute u-bg-alpha50 u-fg-light change-image">
+          <span>{{this.image?'Change Image':'Add Image'}}</span>
+        </div>
+      </mat-card>
+    </div>
+    <div class="col-sm-12 col-md-8 order-md-0">
+      <form [formGroup]="form" (ngSubmit)="onSubmitForm()">
+        <mat-radio-group formControlName="categoryId" aria-label="Select an option" class="u-mb-1">
+          <mat-radio-button value="1" class="u-ml-1">Price Offer</mat-radio-button>
+          <mat-radio-button value="2" class="u-ml-1">Combo Offer</mat-radio-button>
+          <mat-radio-button value="3" class="u-ml-1">Cart Offer</mat-radio-button>
+        </mat-radio-group>
+        <mat-form-field appearance="fill" class="u-width-100">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" required id="name"/>
+        </mat-form-field>
+        <div class="row" *ngIf="this.form.get('categoryId').value==='1'">
+          <div class="col-sm-6"><mat-form-field appearance="fill" class="u-width-100">
+            <mat-label>Sale Price</mat-label>
+            <input matInput formControlName="price" id="price"/>
+          </mat-form-field></div>
+          <div class="col-sm-6"><mat-form-field appearance="fill" class="u-width-100">
+            <mat-label>Actual Price</mat-label>
+            <input matInput formControlName="actualPrice" id="actualPrice"/>
+          </mat-form-field></div>
+        </div>
+        <div class="row" *ngIf="this.form.get('categoryId').value==='2'">
+          <div class="col-sm-12 col-md-6">
+            <mat-form-field appearance="fill" class="u-width-100">
+              <mat-label>Buy</mat-label>
+              <input matInput formControlName="buyItem" id="buyItem"/>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <mat-form-field appearance="fill" class="u-width-100">
+              <mat-label>Get</mat-label>
+              <input matInput formControlName="getItem" id="getItem"/>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row" *ngIf="this.form.get('categoryId').value==='3'">
+          <div class="col-sm-12 col-md-6">
+            <mat-form-field appearance="fill" class="u-width-100">
+              <mat-label>Main</mat-label>
+              <input matInput formControlName="mainItem" id="mainItem"/>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <mat-form-field appearance="fill" class="u-width-100">
+              <mat-label>Sub</mat-label>
+              <input matInput formControlName="subItem" id="subItem"/>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <mat-form-field appearance="fill" class="u-width-100">
+              <mat-label>Save</mat-label>
+              <input matInput formControlName="save" id="save"/>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field appearance="fill" class="u-width-100">
+              <mat-label>Display Order</mat-label>
+              <input matInput formControlName="displayOrder" id="displayOrder" type="number"/>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="u-mt-1">
+          <input type="file" #uploader class="item-uploader" accept="image/*" (change)="onImageUpload($event)">
+          <span class="u-mr-1">
+            <button type="submit" mat-raised-button color="primary" [disabled]="!form.valid">Submit</button>
+          </span>
+          <button type="button" mat-stroked-button class="u-fg-secondary" (click)="onCancel()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
