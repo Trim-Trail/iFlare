@@ -366,13 +366,13 @@
     height: 100%;
   }
 
-  .body-bg{
-    background: url('../../assets/images/banner.jpg') no-repeat center center fixed;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -webkit-background-size: cover;
-    background-size: cover;
-  }
+  // .body-bg{
+  //   background: url('../../assets/images/banner.jpg') no-repeat center center fixed;
+  //   -moz-background-size: cover;
+  //   -o-background-size: cover;
+  //   -webkit-background-size: cover;
+  //   background-size: cover;
+  // }
 }
 
 @mixin site-all($site-colors

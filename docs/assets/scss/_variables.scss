@@ -1,6 +1,6 @@
 @import '~@angular/material/theming';
-$site-mat-primary: mat-palette($mat-purple);
-$site-mat-accent: mat-palette($mat-blue, A200, A100, A400);
+$site-mat-primary: mat-palette($mat-indigo);
+$site-mat-accent: mat-palette($mat-orange, A200, A100, A400);
 $site-mat-warn: mat-palette($mat-red);
 $site-mat-theme: mat-light-theme($site-mat-primary, $site-mat-accent, $site-mat-warn);
 
@@ -21,9 +21,9 @@ $site-colors:(
     grey9:#212121,
     dark: rgba(black, 0.75),
     light:white,
-    error:#d32f2f,
+    error:#de2b1c,
     primary:#9c27b0,
-    secondary:#2196F3,
+    secondary:#3d2b99,
 );
 
 $site-unit:'rem';
